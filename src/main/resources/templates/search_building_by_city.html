@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container form">
+    <h1 th:text="${title}"/>
+    <form action="/search_building_by_city" method="post">
+        <label>City Building:<br><input type="text" name="cityName" class="form-all"></label><br>
+        <button type="submit" class="btn">Найти</button>
+    </form>
+</div>
+
+<table class="container">
+    <thead>
+    <tr>
+        <th>Количество этажей</th>
+        <th>Город</th>
+        <th>Цена</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="el : ${buidlings_all}">
+        <td th:text="${el.getAmountOfFloors()}"></td>
+        <td th:text="${el.getCity()}"></td>
+        <td th:text="${el.getPrice()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+
+</body>
+</html>

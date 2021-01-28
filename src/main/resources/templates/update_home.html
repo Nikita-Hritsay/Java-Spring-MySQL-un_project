@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1 th:text="${title}"/>
+    <form action="/update_home" method="post">
+        <label>Количество людей:<br><input type="number" name="peaple" class="form-control"></label><br>
+        <label>Количество метров:<br><input type="number" name="amountOfMetres" class="form-control"></label><br>
+        <label>ID Home:<br><input type="number" name="home_id" class="form-control"></label><br>
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+</div>
+
+
+
+</body>
+</html>

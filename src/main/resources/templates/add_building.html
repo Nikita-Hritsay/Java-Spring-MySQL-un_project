@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1 th:text="${title}"/>
+    <form action="/add_building" method="post">
+        <label>Количество этажей:<br><input type="text" name="amountOfFloors" class="form-control"></label><br>
+        <label>Город:<br><input type="text" name="city" class="form-control"></label><br>
+        <label>Цена:<br><input type="text" name="price" class="form-control"></label><br>
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+</div>
+
+
+
+</body>
+</html>

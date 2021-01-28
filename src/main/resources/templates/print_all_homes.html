@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5">
+    <h1 th:text="${title}"/>
+</div>
+
+<table class="container">
+    <thead>
+    <tr>
+        <th>Id Home</th>
+        <th>Количество метров</th>
+        <th>Количество людей</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="el : ${homes_all}">
+        <td th:text="${el.getId_home()}"></td>
+        <td th:text="${el.getAmountOfMetres()}"></td>
+        <td th:text="${el.getPeaple()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+</body>
+</html>
